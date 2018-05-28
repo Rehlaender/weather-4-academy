@@ -5,7 +5,7 @@ just wanted to make something with thunks wrongly implemented
 ## Installation
 
 ```bash
-git clone https://github.com/notrab/create-react-app-redux.git
+git clone https://github.com/Rehlaender/weather-4-academy
 cd create-react-app-redux
 yarn
 ```
