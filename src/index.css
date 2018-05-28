@@ -4,7 +4,7 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 1em;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
     sans-serif;
   font-size: 1rem;
@@ -38,6 +38,11 @@ input {
   background: transparent;
   border-bottom: 1px solid white;
   color: white;
+  font-size: 1.5em;
+}
+
+label {
+  font-size: 1em;
 }
 
 button,
@@ -53,6 +58,15 @@ input[type='reset'] {
   border: 1px solid white;
   padding: 0.5em;
   margin: 10px;
+  border-bottom: 7px solid lightgray;
+}
+
+button:hover,
+button:active,
+button:focus {
+  border-bottom: 4px solid lightgray;
+  margin-top: 13px;
+  margin-bottom: 10px;
 }
 
 .city > span {
@@ -75,11 +89,32 @@ input[type='reset'] {
   border: 1px solid white;
   padding: 0.5em;
   margin: 0.5em 1em;
+  border-bottom: 7px solid lightgray;
+  position: relative;
 }
 
-.deleteButton {
-  align-self: flex-end;
+.city > .buttonContainer {
+  position: absolute;
+  top: 1em;
+  right: 1em;
 }
+
+.city > .buttonContainer > span {
+  margin-left: 10px;
+}
+
+.city > .buttonContainer > span:hover > i {
+  cursor: pointer;
+  font-size: 1em;
+}
+.city > .buttonContainer > .deleteButton:hover > i {
+  color: #ff8383;
+}
+
+.city > .buttonContainer > .detailButton:hover > i {
+  color: #81ff76;
+}
+
 @media only screen and (min-width: 320px) {
   .city {
     width: 100%;

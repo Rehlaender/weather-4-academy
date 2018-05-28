@@ -40,6 +40,8 @@ export default (state = initialState, action) => {
     case 'FETCH_CITY_SUCCESS':
       return {
         ...state,
+        searchingCity: '',
+        searchingCountry: '',
         canPostAnotherCity: true,
         savedCities: [...state.savedCities, action.payload]
       };

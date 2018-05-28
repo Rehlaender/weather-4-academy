@@ -16,7 +16,7 @@ export const homeDisplay = ({posts,
     <div className="homeContainer">
         <div className="searchcity">
           <label>city</label>
-          <input id="city" onChange={(e) => {changeCityValue(e.target.value)}} value={searchingCity} />
+          <input autoFocus id="city" onChange={(e) => {changeCityValue(e.target.value)}} value={searchingCity} />
           <label>country</label>
           <input id="country" onChange={(e) => {changeCountryValue(e.target.value)}} value={searchingCountry} />
           <button disabled={!canPostAnotherCity} onClick={() => {fetchCityWithRedux(searchingCity, searchingCountry)}}> add city</button>
@@ -29,15 +29,17 @@ export const homeDisplay = ({posts,
             {savedCities.map((city,i)=>(
                 <div className="city animated bounceIn"
                   key={i}>
-                  <span className="detailButton" onClick={() => {goToCityDetailWithRedux(city); goToDetailCity(city.id)}}><em>+ detail</em></span>
-                  <span className="deleteButton" onClick={() => {deleteCityWithRedux(city.id)}}>x</span>
-                  <span>city: {city.name}</span>
-                  <span>weather: {city.weather[0].main}</span>
-                  <li>temp: {
+                  <div className="buttonContainer">
+                  <span className="detailButton" onClick={() => {goToCityDetailWithRedux(city); goToDetailCity(city.id)}}><i className="fa fa-search"></i></span>
+                  <span className="deleteButton" onClick={() => {deleteCityWithRedux(city.id)}}><i className="fa fa-close"></i></span>
+                  </div>
+                  <span style={{textTransform:'uppercase'}}>{city.name} : <span style={{color:'lightgray'}}>{city.sys.country}</span></span>
+                  <span>- {city.weather[0].main} : <span style={{color:'lightgray'}}>{city.weather[0].description}</span></span>
+                  <span>Temperature : <span style={{color:'lightgray'}}>{
                     (temperatureUnit === 'metric') ? (
                       Math.floor(city.main.temp - 273.15)
                     ) : (Math.floor((city.main.temp-273.15)*1.8)+32)
-                  }{(temperatureUnit === 'metric' ? '°f': '°c')}</li>
+                  }{(temperatureUnit === 'metric' ? '°f': '°c')}</span></span>
                 </div>
             ))}
         </div> :
