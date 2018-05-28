@@ -1,9 +1,10 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 export const cityDetailDisplay = ({actualCity, logInfo})=>(
     <div className="homeContainer">
         { actualCity.name ? (
           <div>
+            <Link to="/">{`<= back`}</Link>
             <h1>name: {actualCity.name}</h1>
             <p>coord: {actualCity.coord.lon}, {actualCity.coord.lat}</p>
             <p>weather: {actualCity.weather[0].main}.<em>{actualCity.weather[0].description}</em></p>

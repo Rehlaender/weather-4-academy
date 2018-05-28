@@ -34,6 +34,5 @@ export const homeDisplay = ({posts,
             You have no saved cities... start loading one
         </div>
         }
-        <button onClick={changeToCityDetail}> go</button>
     </div>
 );

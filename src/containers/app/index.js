@@ -7,9 +7,9 @@ import CityDetailContainer from '../city-detail/cityDetailContainer';
 const App = () => (
   <div className="mainContent">
     <header>
-      <Link to="/">Home</Link>
-      <Link to="/about-us">About</Link>
-      <Link to="/city-detail/1">city detail </Link>
+      <h1 style={{ textAlign: 'center' }}>
+        temperature for saved cities with redux n thunk
+      </h1>
     </header>
 
     <main>
