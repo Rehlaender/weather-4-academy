@@ -21,7 +21,12 @@ export default (state = initialState, action) => {
     case 'FETCH_ERROR':
       return { ...state, canPostAnotherCity: true };
     case 'FETCH_SUCCESS':
-      return { ...state, posts: action.payload };
+      return {
+        ...state,
+        posts: action.payload,
+        searchingCity: '',
+        searchingCountry: ''
+      };
     case 'CHANGE_CITY_VALUE':
       return {
         ...state,

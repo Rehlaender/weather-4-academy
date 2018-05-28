@@ -41,7 +41,7 @@ export const homeDisplay = ({posts,
                 </div>
             ))}
         </div> :
-        <div>
+        <div style={{textAlign:'center'}}>
             You have no saved cities... start loading one
         </div>
         }
