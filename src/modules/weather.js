@@ -5,7 +5,7 @@ const initialState = {
       title: 'lel'
     }
   ],
-  searchingCity: 'asdf',
+  searchingCity: '',
   searchingCountry: ''
 };
 

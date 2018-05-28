@@ -17,6 +17,13 @@ function fetchPostsError() {
   };
 }
 
+function fetchCityError() {
+  alert('cant find that city');
+  return {
+    type: 'FETCH_ERROR'
+  };
+}
+
 function fetchPosts() {
   const URL = 'https://jsonplaceholder.typicode.com/posts';
   return fetch(URL, { method: 'GET' }).then(response =>
@@ -64,7 +71,6 @@ export const fetchPostsWithRedux = () => {
 };
 
 function fetchCity(postValues) {
-  console.log(postValues, 'post values');
   const URL = `http://api.openweathermap.org/data/2.5/weather?q=${
     postValues.searchingCity
   },${postValues.searchingCountry}&APPID=ea07077cbdfd161a3a94b6572515407d`;
@@ -90,7 +96,7 @@ export const fetchCityWithRedux = (searchingCity, searchingCountry) => {
       if (response.status === 200) {
         dispatch(fetchCitySuccess(json));
       } else {
-        dispatch(fetchPostsError());
+        dispatch(fetchCityError());
       }
     });
   };
@@ -104,7 +110,6 @@ function deleteCity(payload) {
 }
 
 export const deleteCityWithRedux = cityId => {
-  console.log('delete this city id', cityId);
   return dispatch => {
     dispatch(deleteCity(cityId));
   };
