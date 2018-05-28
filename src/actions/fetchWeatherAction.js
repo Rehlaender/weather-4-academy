@@ -156,3 +156,18 @@ export const goToCityDetailWithRedux = city => {
     dispatch(goToDetailCity(city));
   };
 };
+
+function toggleUnit() {
+  const tempUnit = localStorage.getItem('temperatureUnit');
+  const newUnit = tempUnit === 'metric' ? 'imperial' : 'metric';
+  localStorage.setItem('temperatureUnit', newUnit);
+  return {
+    type: 'TOGGLE_TEMPERATURE_UNIT'
+  };
+}
+
+export const toggleTemperatureUnit = () => {
+  return dispatch => {
+    dispatch(toggleUnit());
+  };
+};

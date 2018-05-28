@@ -9,7 +9,7 @@ export const cityDetailDisplay = ({actualCity, logInfo})=>(
             <p>coord: {actualCity.coord.lon}, {actualCity.coord.lat}</p>
             <p>weather: {actualCity.weather[0].main}.<em>{actualCity.weather[0].description}</em></p>
             <ul>
-              <li>temp: {actualCity.main.temp}</li>
+              <li>temp: {actualCity.main.temp} K</li>
               <li>pressure: {actualCity.main.pressure}</li>
               <li>humidity: {actualCity.main.humidity}</li>
             </ul>

@@ -7,7 +7,8 @@ import {
   changeCityValue,
   changeCountryValue,
   deleteCityWithRedux,
-  goToCityDetailWithRedux
+  goToCityDetailWithRedux,
+  toggleTemperatureUnit
 } from '../../actions/fetchWeatherAction';
 
 import { homeDisplay } from './homeDisplay';
@@ -16,7 +17,9 @@ const mapStateToProps = state => ({
   posts: state.weather.posts,
   savedCities: state.weather.savedCities,
   searchingCity: state.weather.searchingCity,
-  searchingCountry: state.weather.searchingCountry
+  searchingCountry: state.weather.searchingCountry,
+  temperatureUnit: state.weather.temperatureUnit,
+  canPostAnotherCity: state.weather.canPostAnotherCity
 });
 
 const mapDispatchToProps = dispatch =>
@@ -29,7 +32,8 @@ const mapDispatchToProps = dispatch =>
       changeCityValue,
       changeCountryValue,
       deleteCityWithRedux,
-      goToCityDetailWithRedux
+      goToCityDetailWithRedux,
+      toggleTemperatureUnit
     },
     dispatch
   );
