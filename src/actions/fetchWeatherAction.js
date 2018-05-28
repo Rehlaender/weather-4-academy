@@ -5,6 +5,16 @@ function fetchPostsRequest() {
 }
 
 function fetchPostsSuccess(payload) {
+  const citiesInLocalStorage = localStorage.getItem('savedCities');
+  if (citiesInLocalStorage === null) {
+    const stringifiedPayload = JSON.stringify([payload]);
+    localStorage.setItem('savedCities', stringifiedPayload);
+  } else {
+    const JSONcitiesInLocalStorage = JSON.parse(citiesInLocalStorage);
+    const newCitiesToStorage = { ...JSONcitiesInLocalStorage, payload };
+    const stringifiedNewCitiesToStorage = JSON.stringify(newCitiesToStorage);
+    localStorage.setItem('savedCities', stringifiedNewCitiesToStorage);
+  }
   return {
     type: 'FETCH_SUCCESS',
     payload
@@ -80,6 +90,16 @@ function fetchCity(postValues) {
 }
 
 function fetchCitySuccess(payload) {
+  const citiesInLocalStorage = localStorage.getItem('savedCities');
+  if (citiesInLocalStorage === null) {
+    const stringifiedPayload = JSON.stringify([payload]);
+    localStorage.setItem('savedCities', stringifiedPayload);
+  } else {
+    const JSONcitiesInLocalStorage = JSON.parse(citiesInLocalStorage);
+    const newCitiesToStorage = [...JSONcitiesInLocalStorage, payload];
+    const stringifiedNewCitiesToStorage = JSON.stringify(newCitiesToStorage);
+    localStorage.setItem('savedCities', stringifiedNewCitiesToStorage);
+  }
   return {
     type: 'FETCH_CITY_SUCCESS',
     payload
@@ -103,6 +123,15 @@ export const fetchCityWithRedux = (searchingCity, searchingCountry) => {
 };
 
 function deleteCity(payload) {
+  const citiesInLocalStorage = localStorage.getItem('savedCities');
+  const JSONcitiesInLocalStorage = JSON.parse(citiesInLocalStorage);
+  const filteredCitiesToStorage = JSONcitiesInLocalStorage.filter(
+    city => city.id !== payload
+  );
+  const stringifyFilteredCitiesToStorage = JSON.stringify(
+    filteredCitiesToStorage
+  );
+  localStorage.setItem('savedCities', stringifyFilteredCitiesToStorage);
   return {
     type: 'DELETE_CITY',
     payload

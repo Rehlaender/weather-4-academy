@@ -1,5 +1,6 @@
+const savedCities = loadLocalStorage();
 const initialState = {
-  savedCities: [],
+  savedCities: [...savedCities],
   posts: [
     {
       title: 'lel'
@@ -55,5 +56,6 @@ function filterAndDeleteCityById(cityId, citiesArray) {
 }
 
 function loadLocalStorage() {
-  const savedCities = loadLocalStorage.getIte;
+  const savedCities = localStorage.getItem('savedCities');
+  return savedCities === null ? {} : JSON.parse(savedCities);
 }
