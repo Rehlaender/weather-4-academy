@@ -77,6 +77,9 @@ input[type='reset'] {
   margin: 0.5em 1em;
 }
 
+.deleteButton {
+  align-self: flex-end;
+}
 @media only screen and (min-width: 320px) {
   .city {
     width: 100%;

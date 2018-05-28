@@ -114,3 +114,16 @@ export const deleteCityWithRedux = cityId => {
     dispatch(deleteCity(cityId));
   };
 };
+
+function goToDetailCity(payload) {
+  return {
+    type: 'DETAIL_CITY',
+    payload
+  };
+}
+
+export const goToCityDetailWithRedux = city => {
+  return dispatch => {
+    dispatch(goToDetailCity(city));
+  };
+};

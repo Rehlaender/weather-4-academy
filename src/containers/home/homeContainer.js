@@ -6,7 +6,8 @@ import {
   fetchCityWithRedux,
   changeCityValue,
   changeCountryValue,
-  deleteCityWithRedux
+  deleteCityWithRedux,
+  goToCityDetailWithRedux
 } from '../../actions/fetchWeatherAction';
 
 import { homeDisplay } from './homeDisplay';
@@ -22,11 +23,13 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       changePage: () => push('/about-us'),
+      goToDetailCity: cityId => push(`/city-detail/${cityId}`),
       fetchPostsWithRedux,
       fetchCityWithRedux,
       changeCityValue,
       changeCountryValue,
-      deleteCityWithRedux
+      deleteCityWithRedux,
+      goToCityDetailWithRedux
     },
     dispatch
   );

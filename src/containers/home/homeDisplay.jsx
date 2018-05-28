@@ -7,7 +7,9 @@ export const homeDisplay = ({posts,
   changeCityValue,
   changeCountryValue,
   deleteCityWithRedux,
-  savedCities})=>(
+  goToCityDetailWithRedux,
+  savedCities, changeToCityDetail,
+  goToDetailCity})=>(
     <div className="homeContainer">
         <div className="searchcity">
           <p>temperature for saved cities with redux n thunk</p>
@@ -20,12 +22,11 @@ export const homeDisplay = ({posts,
         {savedCities.length > 0 ? <div className="citiesContainer">
             {savedCities.map((city,i)=>(
                 <div className="city animated bounceIn"
-                  onClick={() => {deleteCityWithRedux(city.id)}} key={i}>
+                  key={i}>
+                  <span className="detailButton" onClick={() => {goToCityDetailWithRedux(city); goToDetailCity(city.id)}}><em>+ detail</em></span>
+                  <span className="deleteButton" onClick={() => {deleteCityWithRedux(city.id)}}>x</span>
                   <span>city: {city.name}</span>
                   <span>weather: {city.weather[0].main}</span>
-                  <span><em>{city.weather[0].description}</em></span><br/>
-                  <span>temp: {city.weather[0].main}</span>
-
                 </div>
             ))}
         </div> :
@@ -33,5 +34,6 @@ export const homeDisplay = ({posts,
             You have no saved cities... start loading one
         </div>
         }
+        <button onClick={changeToCityDetail}> go</button>
     </div>
 );

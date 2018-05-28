@@ -6,7 +6,8 @@ const initialState = {
     }
   ],
   searchingCity: '',
-  searchingCountry: ''
+  searchingCountry: '',
+  actualCity: {}
 };
 
 export default (state = initialState, action) => {
@@ -39,6 +40,11 @@ export default (state = initialState, action) => {
         ...state,
         savedCities: [...newCities]
       };
+    case 'DETAIL_CITY':
+      return {
+        ...state,
+        actualCity: { ...action.payload }
+      };
     default:
       return state;
   }
@@ -46,4 +52,8 @@ export default (state = initialState, action) => {
 
 function filterAndDeleteCityById(cityId, citiesArray) {
   return citiesArray.filter(city => city.id !== cityId);
+}
+
+function loadLocalStorage() {
+  const savedCities = loadLocalStorage.getIte;
 }
