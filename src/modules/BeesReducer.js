@@ -6,7 +6,8 @@ const initialState = {
       speed: 10,
       x: 0,
       color: 'red',
-      y: 0
+      y: 0,
+      timer: 0
     },
     {
       id: 1,
@@ -14,7 +15,8 @@ const initialState = {
       speed: 10,
       x: 10,
       color: 'green',
-      y: 10
+      y: 10,
+      timer: 0
     }
   ]
 };
@@ -25,12 +27,13 @@ const defaultBee = {
   speed: 10,
   x: 0,
   color: 'red',
-  y: 0
+  y: 0,
+  timer: 0
 };
 
 export default (state = { ...initialState }, action) => {
   switch (action.type) {
-    case 'ADD_NEW_TEXT_BOX':
+    case 'ADD_NEW_BEE':
       const lastId = action.payload.lastId;
       const newBee = { ...defaultEmptyTextBox, id: lastId };
       return {
@@ -38,7 +41,11 @@ export default (state = { ...initialState }, action) => {
         bees: [...state.bees, newBee]
       };
       break;
-    case 'ADD_OBJECT':
+    case 'CHANGE_BEE_MOOD':
+      const [beeWithNewMood] = state.bees.filter(
+        bee => action.payload.bee.id != bee.id
+      );
+
       return {
         result: action.payload
       };
