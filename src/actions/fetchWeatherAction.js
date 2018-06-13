@@ -41,7 +41,7 @@ function fetchPosts() {
   );
 }
 
-function changeCity(payload) {
+export function changeCity(payload) {
   return {
     type: 'CHANGE_CITY_VALUE',
     payload
@@ -54,7 +54,7 @@ export const changeCityValue = value => {
   };
 };
 
-function changeCountry(payload) {
+export function changeCountry(payload) {
   return {
     type: 'CHANGE_COUNTRY_VALUE',
     payload
