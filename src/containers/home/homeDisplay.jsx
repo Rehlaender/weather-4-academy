@@ -16,7 +16,7 @@ export const homeDisplay = ({posts,
     <div className="homeContainer">
         <header>
           <h1 style={{ textAlign: 'center' }}>
-            temperature for saved cities with redux n thunk
+            temperature from saved cities
           </h1>
         </header>
         <div className="searchcity">

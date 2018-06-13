@@ -5,17 +5,22 @@ import { connect } from 'react-redux';
 //   fetchPostsWithRedux,
 // } from '../../actions/fetchWeatherAction';
 
+import {
+  changeTextObjectValue,
+  addTextBox
+} from '../../actions/AnimationAction';
+
 import { beesDisplay } from './beesDisplay';
 
 const mapStateToProps = state => ({
-  // canPostAnotherCity: state.weather.canPostAnotherCity
+  texts: state.animationReducer.texts,
+  bees: state.animationReducer.bees
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       changePage: () => push('/about-us')
-      // fetchPostsWithRedux
     },
     dispatch
   );

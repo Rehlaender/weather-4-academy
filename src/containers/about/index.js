@@ -5,7 +5,7 @@ const About = () => (
   <div>
     <h1>react portfolio by mario.rehlaender</h1>
     <hr />
-    <Link to="/weather">
+    <Link to="/bees">
       <button>
         <i style={{ color: 'white' }} className="fa fa-forumbee" />{' '}
         <span style={{ color: 'white' }}>bees example</span>
