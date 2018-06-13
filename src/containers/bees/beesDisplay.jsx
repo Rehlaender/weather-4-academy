@@ -1,4 +1,5 @@
 import React from 'react'
+import { Bee } from '../../components/Bee';
 
 export const beesDisplay = ({
   bees
@@ -13,7 +14,7 @@ export const beesDisplay = ({
         {
           bees.map((bee, i) => {
             return (
-              <p>{JSON.stringify(bee)}</p>
+              <Bee bee={bee} key={i}/>
             )
           })
         }

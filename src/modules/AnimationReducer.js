@@ -5,13 +5,15 @@ const initialState = {
       happy: true,
       speed: 10,
       x: 0,
+      color: 'red',
       y: 0
     },
     {
       id: 1,
-      happy: true,
+      happy: false,
       speed: 10,
       x: 10,
+      color: 'green',
       y: 10
     }
   ],
