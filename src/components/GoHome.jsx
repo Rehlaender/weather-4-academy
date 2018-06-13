@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 export const GoHome = (props) => (
-    (window.location.pathname != '/') ? (
+    (window.location.pathname !== '/') ? (
       <Link to="/" className="gohomebutton">
         <div style={{...style}}><i style={{color: 'white'}} className="fa fa-home"></i>
         </div>
