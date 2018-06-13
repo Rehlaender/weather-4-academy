@@ -1,18 +1,23 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
-import HomeContainer from '../home/homeContainer';
+import { Route } from 'react-router-dom';
+
+//routes
 import About from '../about';
+import HomeContainer from '../home/homeContainer';
+import CityDetailContainer from '../city-detail/cityDetailContainer';
+import BeesContainer from '../bees/beesContainer';
+
+//homebutton
+import { GoHome } from '../../components/GoHome';
 
 const App = () => (
-  <div>
-    <header>
-      <Link to="/">Home</Link>
-      <Link to="/about-us">About</Link>
-    </header>
-
+  <div className="mainContent">
+    <GoHome />
     <main>
-      <Route exact path="/" component={HomeContainer} />
-      <Route exact path="/about-us" component={About} />
+      <Route exact path="/" component={About} />
+      <Route path="/bees" component={BeesContainer} />
+      <Route path="/weather" component={HomeContainer} />
+      <Route path="/city-detail/:id" component={CityDetailContainer} />
     </main>
   </div>
 );
