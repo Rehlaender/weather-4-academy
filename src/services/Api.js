@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiId = 'ea07077cbdfd161a3a94b6572515407d';
-const apiRoot = 'http://api.openweathermap.org/data/2.5/weather?';
+const apiRoot = 'https://api.openweathermap.org/data/2.5/weather?';
 
 const Api = {
   getCurrentWeatherWithCityId(cityId) {

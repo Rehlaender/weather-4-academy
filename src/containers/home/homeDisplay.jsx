@@ -14,6 +14,11 @@ export const homeDisplay = ({posts,
   canPostAnotherCity,
   goToDetailCity})=>(
     <div className="homeContainer">
+        <header>
+          <h1 style={{ textAlign: 'center' }}>
+            temperature from saved cities
+          </h1>
+        </header>
         <div className="searchcity">
           <label>city</label>
           <input autoFocus id="city" onChange={(e) => {changeCityValue(e.target.value)}} value={searchingCity} />

@@ -1,21 +1,26 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
-import HomeContainer from '../home/homeContainer';
+import { Route } from 'react-router-dom';
+
+//routes
 import About from '../about';
+import HomeContainer from '../home/homeContainer';
 import CityDetailContainer from '../city-detail/cityDetailContainer';
+import BeesContainer from '../bees/beesContainer';
+
+//homebutton
+import { GoHome } from '../../components/GoHome';
 
 const App = () => (
   <div className="mainContent">
-    <header>
-      <h1 style={{ textAlign: 'center' }}>
-        temperature for saved cities with redux n thunk
-      </h1>
-    </header>
-
+    <GoHome />
     <main>
-      <Route exact path="/" component={HomeContainer} />
-      <Route path="/city-detail/:id" component={CityDetailContainer} />
-      <Route exact path="/about-us" component={About} />
+      <Route exact path="/react-portfolio" component={About} />
+      <Route path="/react-portfolio/bees" component={BeesContainer} />
+      <Route path="/react-portfolio/weather" component={HomeContainer} />
+      <Route
+        path="/react-portfolio/city-detail/:id"
+        component={CityDetailContainer}
+      />
     </main>
   </div>
 );
