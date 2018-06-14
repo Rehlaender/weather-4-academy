@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 export const GoHome = (props) => (
     (window.location.pathname !== '/') ? (
-      <Link to="/" className="gohomebutton">
+      <Link to="/react-portfolio" className="gohomebutton">
         <div style={{...style}}><i style={{color: 'white'}} className="fa fa-home"></i>
         </div>
       </Link>

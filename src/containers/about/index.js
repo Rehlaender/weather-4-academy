@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 const About = () => (
   <div>
-    <h1>react portfolio by mario.rehlaender</h1>
+    <h1>react portfolio by rehlaender</h1>
     <hr />
-    <Link to="/bees">
+    <Link to="/react-portfolio/bees">
       <button>
         <i style={{ color: 'white' }} className="fa fa-forumbee" />{' '}
         <span style={{ color: 'white' }}>bees example</span>
       </button>
     </Link>
-    <Link to="/weather">
+    <Link to="/react-portfolio/weather">
       <button>
         <i style={{ color: 'white' }} className="fa fa-bolt" />{' '}
         <span style={{ color: 'white' }}>weather example</span>

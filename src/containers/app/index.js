@@ -14,10 +14,13 @@ const App = () => (
   <div className="mainContent">
     <GoHome />
     <main>
-      <Route exact path="/" component={About} />
-      <Route path="/bees" component={BeesContainer} />
-      <Route path="/weather" component={HomeContainer} />
-      <Route path="/city-detail/:id" component={CityDetailContainer} />
+      <Route exact path="/react-portfolio" component={About} />
+      <Route path="/react-portfolio/bees" component={BeesContainer} />
+      <Route path="/react-portfolio/weather" component={HomeContainer} />
+      <Route
+        path="/react-portfolio/city-detail/:id"
+        component={CityDetailContainer}
+      />
     </main>
   </div>
 );

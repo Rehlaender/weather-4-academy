@@ -35,7 +35,7 @@ function fetchCityError() {
 }
 
 function fetchPosts() {
-  const URL = 'https://jsonplaceholder.typicode.com/posts';
+  const URL = 'httpss://jsonplaceholder.typicode.com/posts';
   return fetch(URL, { method: 'GET' }).then(response =>
     Promise.all([response, response.json()])
   );
@@ -81,7 +81,7 @@ export const fetchPostsWithRedux = () => {
 };
 
 function fetchCity(postValues) {
-  const URL = `http://api.openweathermap.org/data/2.5/weather?q=${
+  const URL = `https://api.openweathermap.org/data/2.5/weather?q=${
     postValues.searchingCity
   },${postValues.searchingCountry}&APPID=ea07077cbdfd161a3a94b6572515407d`;
   return fetch(URL, { method: 'GET' }).then(response =>

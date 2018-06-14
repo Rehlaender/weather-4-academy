@@ -26,7 +26,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       changePage: () => push('/about-us'),
-      goToDetailCity: cityId => push(`/city-detail/${cityId}`),
+      goToDetailCity: cityId => push(`/react-portfolio/city-detail/${cityId}`),
       fetchPostsWithRedux,
       fetchCityWithRedux,
       changeCityValue,
